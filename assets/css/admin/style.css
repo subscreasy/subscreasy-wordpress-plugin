@@ -1,0 +1,25 @@
+.subscreasy-options .actions .button.test-connectivity {
+	margin-right: 5px;
+}
+
+#subscreasy-overlay {
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000000;
+}
+
+#subscreasy-overlay .loader {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#subscreasy-overlay .loader img {
+    max-width: 100px;
+    vertical-align: middle;
+}
