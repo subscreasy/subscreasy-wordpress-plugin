@@ -147,9 +147,11 @@ if( ! class_exists( 'Subscreasy' ) ) :
 				wp_enqueue_script( 'subscreasy_admin_scripts', SUBSCREASY_ROOT_URL . 'assets/js/admin/scripts.js', array( 'jquery' ), true );
 				wp_localize_script( 'subscreasy_admin_scripts', 'subscreasyAdminParams', array(
 					'ajaxURL'     => admin_url( 'admin-ajax.php' ),
+					'textId'      => __( 'Id', 'susbcreasy' ),
 					'textName'    => __( 'Name', 'susbcreasy' ),
 					'textPrice'   => __( 'Price', 'susbcreasy' ),
-					'textCurr'    => __( 'LT', 'susbcreasy' ),
+					'textPrice'   => __( 'Shortcode', 'susbcreasy' ),
+					'textCurr'    => __( 'TL', 'susbcreasy' ),
 					'textErr'     => __( 'Something went wrong. Please try again.', 'subscreasy' ),
 					'textUnauth'  => __( 'Unauthorized: access denied.', 'subscreasy' ),
 					'textUnsaved' => __( 'Unsaved changes!', 'subscreasy' ),

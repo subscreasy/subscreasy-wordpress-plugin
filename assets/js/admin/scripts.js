@@ -28,12 +28,21 @@
 					}
 
 					var testData = response.map( function( i ) {
-						return { name: i.name, price: i.price };
+						return { id: i.id,  name: i.name, price: i.price };
 					} );
 					
-					var testOutput = '<table class="wp-list-table widefat fixed striped posts"><thead><tr><th>' + subscreasyAdminParams.textName + '</th><th>'+ subscreasyAdminParams.textPrice + '</th></tr></thead>';
+					var testOutput = '<table class="wp-list-table widefat fixed striped posts"><thead><tr>' +
+						'<th>' + subscreasyAdminParams.textId + '</th>' +
+						'<th>' + subscreasyAdminParams.textName + '</th>' +
+						'<th>'+ subscreasyAdminParams.textPrice + '</th>' +
+						'<th>'+ subscreasyAdminParams.buttonShortCode + '</th></tr></thead>';
 					testData.forEach( function( i ) {
-						testOutput += '<tr><td>' + i.name + '</td><td>' + i.price + ' ' + subscreasyAdminParams.textCurr + '</td></tr>';
+						testOutput += '<tr>' +
+							'<td>' + i.id + '</td>' +
+							'<td>' + i.name + '</td>' +
+							'<td>' + i.price + ' ' + subscreasyAdminParams.textCurr + '</td>' +
+							"<td>[subscreasy_button title='Subscribe Now!' offer_id='" + i.id + "']</td>" +
+							'</tr>';
 					} );
 
 					testData += '</table>';
