@@ -1,0 +1,149 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin-bottom: 30px; /* Margin bottom by footer height */
+}
+
+body > .container {
+    padding-top: 80px;
+}
+
+a:hover {
+    text-decoration: none;
+    transition: all 0.2s linear 0s;
+}
+
+h4 {
+    color: #344a5f;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+th {
+    color: rgb(50, 175, 185);
+}
+
+.border-shadow {
+    border: 1px;
+    box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.1);
+}
+
+.border-with-shadow {
+    border: 1px;
+    box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+.rounded-button {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    line-height: 1;
+    display: inline-block;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(52, 74, 95);
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.1) 2px 0 20px;
+    padding: 22px 30px;
+    border-radius: 30px;
+    transition: all 0.4s linear 0s;
+}
+
+.yellow-button {
+    background-color: rgb(247, 184, 43);
+    border-color: rgb(247, 184, 43);
+}
+
+/* CSS for Credit Card Payment form */
+.credit-card-box .panel-title {
+    display: inline;
+    font-weight: bold;
+}
+.credit-card-box .form-control.error {
+    border-color: red;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,0,0,0.6);
+}
+.credit-card-box label.error {
+    font-weight: bold;
+    color: red;
+    padding: 2px 8px;
+    margin-top: 2px;
+}
+.credit-card-box .payment-errors {
+    font-weight: bold;
+    color: red;
+    padding: 2px 8px;
+    margin-top: 2px;
+}
+.credit-card-box label {
+    display: block;
+}
+/* The old "center div vertically" hack */
+.credit-card-box .display-table {
+    display: table;
+}
+.credit-card-box .display-tr {
+    display: table-row;
+}
+.credit-card-box .display-td {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+}
+/* Just looks nicer */
+.credit-card-box .panel-heading img {
+    min-width: 180px;
+}
+
+.success-message {
+    font-size: 20px; color: #5C5C5C;
+}
+
+.box-shadow {box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);}
+
+.box-shadow-navbar {
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+}
+
+.list-group a:hover {
+    text-decoration: none;
+    background-color: #337ab7;
+    color: #ffffff;
+    transition: all 0.2s linear 0s;
+}
+
+.list-group-item {
+    border-right-width: 0;
+    border-left-width: 0;
+}
+
+.min-width {
+    width: 1%; white-space: nowrap;
+}
+
+.a-highlighted {
+    text-decoration: none;
+    background-color: #337ab7;
+    color: #ffffff;
+    transition: all 0.2s linear 0s;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px; /* Set the fixed height of the footer here */
+    line-height: 30px; /* Vertically center the text there */
+}
+
+.subscreasy-errors-container {
+    text-align: center;
+    color: red;
+}

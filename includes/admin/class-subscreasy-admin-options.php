@@ -25,6 +25,12 @@ if ( ! class_exists( 'Subscreasy_Admin_Options' ) ) :
 			add_action( 'admin_menu', array( $this, 'add_page' ) );
 			add_action( 'admin_init', array( $this, 'register_settings' ) );
 			add_action( 'wp_ajax_subscreasy_test_connectivity', array( $this, 'test_connectivity' ) );
+
+            add_action( 'show_user_profile', array($this, 'extra_user_profile_fields' ) );
+            add_action( 'edit_user_profile', array($this, 'extra_user_profile_fields' ) );
+
+            add_action( 'personal_options_update', array($this, 'save_extra_user_profile_fields' ) );
+            add_action( 'edit_user_profile_update', array($this, 'save_extra_user_profile_fields' ) );
 		}
 
 		/**
@@ -96,8 +102,31 @@ if ( ! class_exists( 'Subscreasy_Admin_Options' ) ) :
 
 			wp_die();
 		}
+
+        /**
+         * Add extra suer profile fields
+         *
+         * @param $user
+         */
+        function extra_user_profile_fields( $user ) {
+		    require_once SUBSCREASY_ROOT_PATH . '/includes/admin/views/user-fields.php';
+        }
+
+        /**
+         * Save the extra user profile fields and return true/false
+         *
+         * @param $user_id
+         * @return bool
+         */
+        function save_extra_user_profile_fields( $user_id ) {
+            if ( !current_user_can( 'edit_user', $user_id ) ) {
+                return false;
+            }
+            update_user_meta( $user_id, 'user_phone', $_POST['phone'] );
+        }
 	}
 
+	// Initialize the class
 	new Subscreasy_Admin_Options;
 
 endif;

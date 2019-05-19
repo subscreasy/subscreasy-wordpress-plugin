@@ -23,6 +23,8 @@ if ( ! class_exists( 'Subscreasy_Shortcodes' ) ) :
 		 */
 		public function __construct() {
 			add_shortcode( 'subscreasy_button', array( $this, 'button' ) );
+
+			add_shortcode( 'subscreasy_subscribe_form', array( $this, 'subscribe_form') );
 		}
 
 		/**
@@ -49,6 +51,20 @@ if ( ! class_exists( 'Subscreasy_Shortcodes' ) ) :
 			require SUBSCREASY_ROOT_PATH . '/includes/views/subscreasy-button.php';
 			return ob_get_clean();
 		}
+
+        /**
+         * Renders the [subscreasy_subscribe_form] shortcode.
+         *
+         * @param array $atts Shortcode attributes.
+         *
+         * @return string HTML output to render.
+         */
+        public function subscribe_form ( $atts ) {
+
+            ob_start();
+            require SUBSCREASY_ROOT_PATH . '/includes/views/subscreasy-form.php';
+            return ob_get_clean();
+        }
 	}
 
 	new Subscreasy_Shortcodes;

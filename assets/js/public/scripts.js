@@ -3,10 +3,10 @@
 		$( '.subscreasy-button' ).on( 'click', function( e ) {
 			e.preventDefault();
 			var offerID = $( this ).data( 'offer-id' );
-
-			if( subscreasyParams.isLoggedIn ) {
+			var url = subscreasyParams.apiURL + "&offerID=" + offerID;
+            if( subscreasyParams.isLoggedIn ) {
 				$.redirect(
-					subscreasyParams.apiURL,
+					url,
 					{
 						'offer.id': offerID,
 						'subscriber.name': subscreasyParams.name,
@@ -43,3 +43,5 @@
 
 	} );
 } )( jQuery );
+
+$ = jQuery.noConflict(true);
