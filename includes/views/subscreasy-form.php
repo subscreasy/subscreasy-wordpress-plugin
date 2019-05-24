@@ -430,7 +430,7 @@ if ( isset( $_POST ) && isset( $_POST['submitted'] ) ) {
     // Initiate the cURL call
     $curl = curl_init();
 
-//    echo "subscriber.name=$first_name&subscriber.surname=$last_name&subscriber.phoneNumber=$phone&paymentType=CC&paymentCard.cardHolderName=$cardholder_name&paymentCard.cardNumber=$card_number&paymentCard.expireMonth=$card_month&paymentCard.expireYear=$card_year&paymentCard.cvc=$card_cvc&offer.id=$offerID&companySiteName=$companyName&callbackUrl=$callbackURL";
+//    echo "subscriber.name=$first_name&subscriber.surname=$last_name&subscriber.phoneNumber=$phone&subscriber.email=$email&paymentType=CC&paymentCard.cardHolderName=$cardholder_name&paymentCard.cardNumber=$card_number&paymentCard.expireMonth=$card_month&paymentCard.expireYear=$card_year&paymentCard.cvc=$card_cvc&offer.id=$offerID&companySiteName=$companyName&callbackUrl=$callbackURL";
 
     // cURL settings
     curl_setopt_array($curl, array(
@@ -441,7 +441,7 @@ if ( isset( $_POST ) && isset( $_POST['submitted'] ) ) {
         CURLOPT_TIMEOUT => 30,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => "subscriber.name=$first_name&subscriber.surname=$last_name&subscriber.phoneNumber=$phone&paymentType=CC&paymentCard.cardHolderName=$cardholder_name&paymentCard.cardNumber=$card_number&paymentCard.expireMonth=$card_month&paymentCard.expireYear=$card_year&paymentCard.cvc=$card_cvc&offer.id=$offerID&companySiteName=$companyName&callbackUrl=$callbackURL",
+        CURLOPT_POSTFIELDS => "subscriber.name=$first_name&subscriber.surname=$last_name&subscriber.phoneNumber=$phone&subscriber.email=$email&paymentType=CC&paymentCard.cardHolderName=$cardholder_name&paymentCard.cardNumber=$card_number&paymentCard.expireMonth=$card_month&paymentCard.expireYear=$card_year&paymentCard.cvc=$card_cvc&offer.id=$offerID&companySiteName=$companyName&callbackUrl=$callbackURL",
         CURLOPT_HTTPHEADER => array(
             "Content-Type: application/x-www-form-urlencoded",
             "Postman-Token: a903827a-e2a7-4597-a1c7-5ec43db70ccf",
