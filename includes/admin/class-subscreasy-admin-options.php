@@ -104,7 +104,7 @@ if ( ! class_exists( 'Subscreasy_Admin_Options' ) ) :
 		}
 
         /**
-         * Add extra suer profile fields
+         * Add extra user profile fields
          *
          * @param $user
          */
@@ -123,6 +123,7 @@ if ( ! class_exists( 'Subscreasy_Admin_Options' ) ) :
                 return false;
             }
             update_user_meta( $user_id, 'user_phone', $_POST['phone'] );
+            update_user_meta( $user_id, 'user_secureID', $_POST['secureID'] );
         }
 	}
 

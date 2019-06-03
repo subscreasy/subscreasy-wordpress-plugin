@@ -430,8 +430,6 @@ if ( isset( $_POST ) && isset( $_POST['submitted'] ) ) {
     // Initiate the cURL call
     $curl = curl_init();
 
-//    echo "subscriber.name=$first_name&subscriber.surname=$last_name&subscriber.phoneNumber=$phone&subscriber.email=$email&paymentType=CC&paymentCard.cardHolderName=$cardholder_name&paymentCard.cardNumber=$card_number&paymentCard.expireMonth=$card_month&paymentCard.expireYear=$card_year&paymentCard.cvc=$card_cvc&offer.id=$offerID&companySiteName=$companyName&callbackUrl=$callbackURL";
-
     // cURL settings
     curl_setopt_array($curl, array(
         CURLOPT_URL => "https://sandbox.subscreasy.com/na/subscription/start/4ds",
@@ -496,7 +494,38 @@ if ( isset( $_POST ) && isset( $_POST['submitted'] ) ) {
             echo "</div>";
         }
     } else {
-        // If there are no errors, display the response
+        // If there are no errors, get the user's secureId and display the response
+
+        // API URL.
+        $api_url_user = 'production' === $options['environment'] ? 'https://prod.subscreasy.com//api/subscribers/email/' . $email : 'https://sandbox.subscreasy.com//api/subscribers/email/' . $email;
+
+        // HTTP headers.
+        $headers2  = array(
+            'Accept: application/json, text/plain, */*',
+            'Authorization: Apikey ' . $options['api_key'],
+        );
+
+        /*
+         * cURL request.
+         */
+        $ch2 = curl_init();
+
+        // cURL options.
+        curl_setopt( $ch2, CURLOPT_HTTPHEADER,     $headers2 );
+        curl_setopt( $ch2, CURLOPT_URL,            $api_url_user );
+        curl_setopt( $ch2, CURLOPT_RETURNTRANSFER, 1 );
+
+        $response2 = curl_exec( $ch2 );
+
+        curl_close( $ch2 );
+
+        // Get user data
+        $user = json_decode($response2);
+        if (sizeof($user) == 1) {
+            $secureID = $user[0]->secureId;
+            $updated = update_user_meta($userData->ID, 'user_secureID', $secureID);
+        }
+
         echo $response;
     }
 
