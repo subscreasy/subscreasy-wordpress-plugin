@@ -33,11 +33,11 @@
 
             if ($secureID == ""): // If the secureID is not yet stored
             ?>
-                <?php _e( 'Please make a subscription first', 'subscreasy' ); ?>
+                <button disabled name="customer_portal" class="button"><?php _e( 'Please make a subscription first', 'subscreasy' ); ?></button>
             <?php
             else: // If the secureID is already stored
             ?>
-                <a href="<?php echo $customer_portal; ?>"><?php echo $customer_portal; ?></a>
+                <a href="<?php echo $customer_portal; ?>"><button name="customer_portal" class="button "><?php _e( 'Go To Subscreasy Customer Portal', 'subscreasy'); ?></button></a>
             <?php
             endif;
             ?>
