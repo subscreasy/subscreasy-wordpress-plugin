@@ -31,7 +31,7 @@
 						return { id: i.id,  name: i.name, price: i.price };
 					} );
 
-					console.log(subscreasyAdminParams);
+					// console.log(subscreasyAdminParams);
 					
 					var testOutput = '<table class="wp-list-table widefat fixed striped posts"><thead><tr>' +
 						'<th>' + subscreasyAdminParams.textId + '</th>' +
