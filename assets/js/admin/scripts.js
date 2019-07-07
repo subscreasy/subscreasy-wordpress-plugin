@@ -30,12 +30,14 @@
 					var testData = response.map( function( i ) {
 						return { id: i.id,  name: i.name, price: i.price };
 					} );
+
+					console.log(subscreasyAdminParams);
 					
 					var testOutput = '<table class="wp-list-table widefat fixed striped posts"><thead><tr>' +
 						'<th>' + subscreasyAdminParams.textId + '</th>' +
 						'<th>' + subscreasyAdminParams.textName + '</th>' +
 						'<th>'+ subscreasyAdminParams.textPrice + '</th>' +
-						'<th>'+ subscreasyAdminParams.buttonShortCode + '</th></tr></thead>';
+						'<th>'+ subscreasyAdminParams.textShortcode + '</th></tr></thead>';
 					testData.forEach( function( i ) {
 						testOutput += '<tr>' +
 							'<td>' + i.id + '</td>' +

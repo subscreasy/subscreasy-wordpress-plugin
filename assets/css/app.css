@@ -28,6 +28,10 @@ th {
     color: rgb(50, 175, 185);
 }
 
+.fa {
+    font-family: FontAwesome;
+}
+
 .border-shadow {
     border: 1px;
     box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.1);

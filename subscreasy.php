@@ -126,21 +126,22 @@ if( ! class_exists( 'Subscreasy' ) ) :
             // Check if the variable payment in the request is set and show the subscreasy form
             if ( array_key_exists( 'payment', $wp->query_vars ) ) {
                 // Get the page's id
-                $page = get_page_by_path( 'subscribe-form' );
-                // Get the page's permalink
-                $page_permalink = get_permalink( $page );
+//                $page = get_page_by_path( 'subscribe-form' );
+//                // Get the page's permalink
+//                $page_permalink = get_permalink( $page );
 
                 // Set the cookie for the offerID
                 setcookie('offerID', $wp->query_vars['offerID'], time() + (86400 * 30), "/"); // 86400 = 1 day
 
+                require_once SUBSCREASY_ROOT_PATH . '/includes/views/subscreasy-form.php';
                 // Redirect to the form's page
-                wp_redirect( $page_permalink );
+//                wp_redirect( $page_permalink );
                 exit();
             }
             else if (array_key_exists('subscriptionId', $wp->query_vars) && ($wp->request == $callbackUrl || get_home_url() . '/' . $wp->request == $callbackUrl || strpos($callbackUrl, $wp->request) >= 0) ) {
                 // Check if the request contains subscriptionID which would mean that the subscription is successfully made
                 // Get the page's id
-                $page = get_page_by_path( 'subscreasy-thank-you' );
+//                $page = get_page_by_path( 'subscreasy-thank-you' );
 
                 // Set cookies for the paymentID, authCode, subscriptionID, nextChargingDate and the trial, all of which are sent from the SubscrEasy API
                 setcookie('paymentId', $wp->query_vars['paymentId'], time() + (86400 * 30), "/");

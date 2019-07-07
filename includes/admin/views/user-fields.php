@@ -37,7 +37,7 @@
             <?php
             else: // If the secureID is already stored
             ?>
-                <a href="<?php echo $customer_portal; ?>"><button name="customer_portal" class="button "><?php _e( 'Go To Subscreasy Customer Portal', 'subscreasy'); ?></button></a>
+                <a target="_blank" href="<?php echo $customer_portal; ?>"><button type="button" name="customer_portal" class="button "><?php _e( 'Go To Subscreasy Customer Portal', 'subscreasy'); ?></button></a>
             <?php
             endif;
             ?>
